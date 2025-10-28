@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ticket Received</title>
+  <link rel="stylesheet" href="/assets/css/last.css">
+  <style>
+    .card {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+      text-align: center;
+    }
+    .last {
+      margin: 20px 0;
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>✅ Ticket Received</h1>
+    <p><b>IRCTC டிக்கெட் வெற்றிகரமாக கிடைத்தது</b></p>
+    <p>Thank you! Your details were submitted.</p>
+     
+    <p class="last">
+      <b>
+         PNR         ➡️   <span id="pnr"></span><br>
+         Passenger   ➡️   <span id="passenger"></span><br>
+         
+      </b>
+    </p>
+    <h3>Ticket screenshot to TTR along with valid ID proof</h3>
+
+    <div class="bigright">
+      <img src="/assets/rightirctc.webp" height="300" width="300px">
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+     
+    const passengerName = params.get("name") || "N/A";
+    const passengerAge = params.get("age") || "N/A";
+    const aadhaar = params.get("aadhaar") || "N/A";
+    const rupees = params.get("rupees") || "N/A";
+
+   
+    const trainName = params.get("trainName") || "N/A";
+    const trainType = params.get("trainType") || "N/A";
+    const trainTime = params.get("trainTime") || "N/A";
+    const trainSeats = params.get("trainSeats") || "N/A";
+    const trainPrice = params.get("trainPrice") || rupees;
+
+   
+    const randomPNR = Math.floor(1000000000 + Math.random() * 9000000000);
+
+   
+    document.getElementById("pnr").textContent = randomPNR;
+    document.getElementById("passenger").textContent = `${passengerName} (Age: ${passengerAge}) | Aadhaar: ${aadhaar}`;
+    document.getElementById("train").textContent = `${trainName} (${trainType})`;
+    document.getElementById("route").textContent = "Chennai → Rameshwaram"; // TODO: pass dynamically if needed
+    document.getElementById("datetime").textContent = trainTime;
+    document.getElementById("price").textContent = `₹${trainPrice}`;
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+body{
+    justify-items: center;
+    background-image: linear-gradient(wheat,pink);   
+}
+
+.color1{
+    background-color: blue;
+    color: aliceblue;
+}
+
+#change{
+    text-align: center;
+    height: 1350px;
+    width: 800;
+    border: 4px solid;
+    border-radius: 50px;
+}
+
+.underline{
+    
+    border-bottom: 4px solid;
+    margin: 20px 0;
+}
+.underline2{
+    
+    border-bottom: 4px solid;
+    margin: 20px 0;
+}
+
+.underline3{
+
+    border-bottom: 4px solid;
+    margin: 20px 0;
+}
+
+.underline4{
+
+    border-bottom: 4px solid;
+    margin: 20px 0;
+}
+
+.homelast{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: black;
+    width: 40px;
+    height: 10px;
+}
+.homelast a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+    

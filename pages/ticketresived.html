@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticket Form</title>
+  <link rel="stylesheet" href="/assets/css/ticket-rec.css">
+  
+</head>
+
+<body>
+  
+  <form class="card" action="tickect.html" method="get" autocomplete="on">
+    <h1>Ticket Details</h1>
+
+    
+    <div class="train-details">
+      <h2>Train Information</h2>
+      <p><strong>Train Name:</strong> <span id="trainName"></span></p>
+      <p><strong>Type:</strong> <span id="trainType"></span></p>
+      <p><strong>Rating:</strong> <span id="rating"></span></p>
+      <p><strong>Time:</strong> <span id="time"></span></p>
+      <p><strong>Seats:</strong> <span id="seats"></span></p>
+      <p><strong>Price:</strong> <span id="price"></span></p>
+    </div>
+
+   
+    <input type="hidden" id="hiddenTrainName" name="trainName">
+    <input type="hidden" id="hiddenTrainType" name="trainType">
+    <input type="hidden" id="hiddenTrainRating" name="trainRating">
+    <input type="hidden" id="hiddenTrainTime" name="trainTime">
+    <input type="hidden" id="hiddenTrainSeats" name="trainSeats">
+    <input type="hidden" id="hiddenTrainPrice" name="trainPrice">
+
+    <div class="field">
+      <label for="name">Passenger Name</label>
+      <input id="name" name="name" type="text" placeholder="Your full name" required/>
+    </div>
+
+    <div class="field">
+      <label for="age">Age</label>
+      <input id="age" name="age" type="number" min="0" max="120" placeholder="25" required />
+    </div>
+
+    <div class="field">
+      <label for="aadhaar">Aadhaar Number</label>
+      <input id="aadhaar" name="aadhaar" type="text" inputmode="numeric" pattern="[0-9]{12}" maxlength="12"
+        placeholder="12-digit Aadhaar" required />
+      <p>Enter exactly 12 digits (0–9).</p>
+    </div>
+
+    <div class="actions">
+      <button type="submit" onclick="alert('Ticket Received')">Book Now</button>
+    </div>
+
+  </form>
+
+  <script>
+   const params = new URLSearchParams(window.location.search);
+
+  document.getElementById("trainName").textContent = params.get("trainName") || "N/A";
+  document.getElementById("trainType").textContent = params.get("trainType") || "N/A";
+  document.getElementById("rating").textContent   = params.get("rating")   || "N/A";
+  document.getElementById("time").textContent     = params.get("time")     || "N/A";
+  document.getElementById("seats").textContent    = params.get("seats")    || "N/A";
+  document.getElementById("price").textContent    = params.get("price")    || "N/A";
+
+  </script>
+  
+</body>
+</html>
